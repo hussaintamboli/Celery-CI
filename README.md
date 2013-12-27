@@ -16,7 +16,7 @@ addTwoNumbers action
   
     function addTwoNumbers()
     {
-	$a = 2;
+    	$a = 2;
 	$b = 3;
 	$isBrokerRunning = $this->celeryclientlib->getBrokerStatus();
 	if ($isBrokerRunning) {        
