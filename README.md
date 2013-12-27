@@ -1,7 +1,7 @@
 Celery-CI
 =========
 
-celery.php (celery-php) transformed into a CodeIgniter library.   
+celery-php (celery.php) transformed into a CodeIgniter library.   
 
 The original celery.php taken from https://github.com/gjedeer/celery-php/blob/master/celery.php  
 
