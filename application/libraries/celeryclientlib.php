@@ -32,7 +32,8 @@ class CeleryClientLib
 			log("info", "Cannot connect to the broker!");
 			return false;
 		}
-		return $amqpConnection;
+		$amqpConnection->disconnect();
+		return true;
 	}
 
 }
