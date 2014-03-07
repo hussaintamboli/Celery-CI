@@ -22,14 +22,19 @@ class CeleryClientLib
 	// broker : rabbitmq 
 	function getBrokerStatus()
 	{
-		$amqpConnection = new AMQPConnection();
-		$amqpConnection->setLogin("guest");
-		$amqpConnection->setPassword("guest");
-		$amqpConnection->setVhost("/");
-		$amqpConnection->connect();
+		try {
+			$amqpConnection = new AMQPConnection();
+			$amqpConnection->setLogin("guest");
+			$amqpConnection->setPassword("guest");
+			$amqpConnection->setVhost("/");
+			$amqpConnection->connect();
+		} catch (Exception $e) {
+			log_message("info", "Exception: " . $e->getMessage());
+			return false;
+		}
 
 		if (!$amqpConnection->isConnected()) {
-			log("info", "Cannot connect to the broker!");
+			log_message("info", "Cannot connect to the broker!");
 			return false;
 		}
 		$amqpConnection->disconnect();
