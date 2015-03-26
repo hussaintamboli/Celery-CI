@@ -3,6 +3,7 @@ class CeleryController extends CI_Controller
 {
 	function CeleryController()
 	{
+		parent::__construct();
 		$this->load->library('celeryclientlib');
 	}
 
